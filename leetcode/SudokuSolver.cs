@@ -172,7 +172,7 @@ public class BacktrackingSolver(char[][] board)
                     };
                     if (solution[i].value == '.')
                         break;
-                } while (!board.IsAcceptable(solution[i].x, solution[i].y,  solution[i].value));
+                } while (!_board.IsAcceptable(solution[i].x, solution[i].y,  solution[i].value));
                 _board[solution[i].x][solution[i].y] = solution[i].value;
                 i += solution[i].value == '.' ? -1 : 1;
             }
@@ -223,14 +223,14 @@ public class SudokuSolver(char[][] board)
             iterations++;
             discoveredThisRound = false;
             boardCompleted = true;
-            for (var i = 0; i < board.Length; i++)
-            for (var j = 0; j < board[i].Length; j++)
+            for (var i = 0; i < _board.Length; i++)
+            for (var j = 0; j < _board[i].Length; j++)
             {
-                if (board[i][j] != '.') continue;
+                if (_board[i][j] != '.') continue;
                 boardCompleted = false;
                 foreach (var finder in _solutions)
                 {
-                    var found = finder.Find(board, i, j);
+                    var found = finder.Find(_board, i, j);
                     if (found == '.') continue;
                     discoveredThisRound = true;
                     _board[i][j] = found;
