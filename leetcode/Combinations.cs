@@ -31,7 +31,7 @@ public class CombinationsSolver(int n, int k)
     }
 }
 
-public class Solution {
+public class CombinationsSolution {
     public IList<IList<int>> Combine(int n, int k)
     {
         return new CombinationsSolver(n, k).GetCombinations();
