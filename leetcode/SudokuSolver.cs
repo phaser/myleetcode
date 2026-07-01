@@ -254,7 +254,7 @@ public class SudokuSolver(char[][] board)
     }
 }
 
-public class Solution {
+public class SolutionSudokuSolver {
     public void SolveSudoku(char[][] board)
     {
         var solver = new SudokuSolver(board);
